@@ -1,0 +1,646 @@
+<?php include 'db.php';?>
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Home</title>
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta http-equiv="x-ua-compatible" content="ie=edge" />
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+        <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    
+    <body>
+        <div class="container">
+            	<div id="main" class="row mb-5">
+    		    <img src="image.jpeg" weight="50%" class="card-img-top" alt="..." style="margin-top: 20px; margin-bottom: 20px;">
+    		    
+    		    </div>
+    	    </div>
+        <div class="container">
+    		<!--<h2>Bootstrap Cards Varation: </h2>-->
+    		<!--<h3>Same Aspect Ratio ―</h3>-->
+    		
+    		Traffic Controls: 
+    		<input class="btn btn-sm btn-danger" id="stop" type="button" value="Red (Stop)"/>
+            <input class="btn btn-sm btn-success" id="start" type="button" value="Green (Start)"/>
+    		
+    		
+    		<div id="main" class="row mb-5">
+    			<div class="col-md-4">
+    				<div class="card">
+    					<img src="https://media1.giphy.com/media/MFabj1E9mgUsqwVWHu/200w.webp?cid=ecf05e47tz4pipda5m58ribad7lasl5zfd5h3wbfuwtkz4g7&rid=200w.webp" class="card-img-top" alt="...">
+    					<div class="card-body"  style="background-color: black;">
+    						<a href="#" class="btn btn-sm btn-primary">Car 1</a>
+    							<br>
+    						<img src="receiving.gif" width="20%">
+    						<p id="car-1-text" class="card-text" style="margin-top: 30px; color: white;">Intializing..</p>
+    						<p id="car-1-response" class="card-text" style="margin-top: 30px; color: white; font-size: 10px; font-family: 'Press Start 2P', cursive;"></p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="card">
+    					<img src="https://media2.giphy.com/media/MVgBbtMBGQTi6og4mF/giphy.webp?cid=ecf05e47tz4pipda5m58ribad7lasl5zfd5h3wbfuwtkz4g7&rid=giphy.webp" class="card-img-top" alt="...">
+    					<div class="card-body" style="background-color: black;">
+    						<a href="#" class="btn btn-sm btn-primary">Car 2</a>
+    						<br>
+    						<img src="green.gif" width="20%">
+    						<p id="car-2-text" class="card-text" style="margin-top: 30px; color: lightgreen; ">Blockchain Data Console</p>
+    					    <p id="car-2-response" class="card-text" style="margin-top: 30px; color: lightgreen; font-size: 10px; font-family: 'Press Start 2P', cursive;"></p>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="col-md-4">
+    				<div class="card">
+    					<img src="https://media1.giphy.com/media/MFabj1E9mgUsqwVWHu/200w.webp?cid=ecf05e47tz4pipda5m58ribad7lasl5zfd5h3wbfuwtkz4g7&rid=200w.webp" class="card-img-top" alt="...">
+    					
+    					<div class="card-body"  style="background-color: black;">
+    						<a href="#" class="btn btn-sm btn-primary">Road Side Unit (RSU)</a>
+    							<br>
+    						<img src="receiving.gif" width="20%">
+    						<p id="car-3-text" class="card-text" style="margin-top: 30px; color: white;">Intializing..</p>
+    				        <p id="car-3-response" class="card-text" style="margin-top: 30px; color: white; font-size: 10px; font-family: 'Press Start 2P', cursive;"></p>
+    				    </div>
+    				</div>
+    			</div>
+    		</div>
+    		
+    		<!-- row -->
+    	</div>
+    </body>
+
+</html>
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+<script>
+    var timer = 111;
+    var save_i;
+    function periodicRequest(count){
+        // console.log(count);
+        if (timer == null) return;
+        var count = count;
+        // $.post("",
+        //   { 
+        //     count: count,
+        //     old_hash:  previous_hash
+        //   },
+         // function(data, status){
+          //  console.log(data);
+            
+            //
+            
+            // echo  $count3."Previous Hash: ". sha1($old);
+            // echo "<br>";
+            // echo "<br>";
+            // echo "Block ID: ".$count."\n";
+            // echo "<br>";
+            // echo "<br>";
+            // echo "Hash Code: ". sha1($count);
+            // echo "<br>";
+            // echo "<br>";
+            // echo "GPS: ".$gps_lat." , ".$gps_long ;
+            // echo "<br>";
+            // echo "<br>";
+            // echo "Drive ID: ".$driver;
+            // echo "<br>";
+            // echo "<br>";
+            // echo "Speed: ". $speed;
+            // echo "<br>";
+            // echo "<br>";
+            // echo "Timestamp: ".date("Y-m-d h:i:sa");
+            // echo "<br>";   echo "<br>";
+            // echo "Encrypted Data: ".$encrypted ;
+            
+            var datajs = '';
+            var gps_lat = '27.'+randnum(1111,3333);
+            var gps_long = '91.'+randnum(3333,9999);
+            var speed = randnum(50,67);
+            
+            datajs = datajs+'Previous Hash: '+sha1(count-1);
+            datajs = datajs+'<br><br>'+'Block ID: '+count;
+            datajs = datajs+'<br><br>'+'Hash Code: '+sha1(count);
+            datajs = datajs+'<br><br>'+'GPS: '+gps_lat+', '+gps_long;
+            datajs = datajs+'<br><br>'+'Driver ID: '+'007';
+            datajs = datajs+'<br><br>'+'Speed: '+speed;
+            datajs = datajs+'<br><br>'+'Timestamp: '+Date().toLocaleString();
+            datajs = datajs+'<br><br>'+'Encrypted Data: '+Base64.encode(datajs);
+            
+            
+            console.log(datajs);
+            console.log(randnum(1111,3333));
+            
+            
+            
+            //
+            
+            
+            
+            $("#car-1-text").hide()
+            $("#car-1-response").show;
+            $("#car-1-response").html(' '+datajs+'');
+            
+         //   $("#car-2-text").hide()
+         //   $("#car-2-response").show;
+           // new_hash = sha1(data);
+            $("#car-2-response").prepend('&#10; '+datajs+' ');
+          //  previous_hash = new_hash ;
+            
+            
+            $("#car-3-text").hide()
+            $("#car-3-response").show;
+            $("#car-3-response").html(' '+datajs+'');
+            setTimeout(
+  function() 
+  {
+   $("#car-3-response").html(' New Data Loading ');
+   setTimeout(
+   function() 
+  {
+    $("#car-3-response").html(' New Data Loading. ');
+
+  }, 900);
+  setTimeout(
+     function() 
+  {
+    $("#car-3-response").html(' New Data Loading.. ');
+  }, 900);
+  setTimeout(
+  function() 
+  {
+    $("#car-3-response").html(' New Data Loading... ');
+  }, 900);
+  }, 2000);
+           
+      //  });
+    }
+    
+    $("button").on("click", function() {
+        
+    	$("#car-1-response").stop(true, false);
+    })
+    
+    $("#start").click(function(){
+        
+        if(timer !== null)
+        {
+        previous_hash = 0;
+        let i = 1;
+        setInterval( function() { periodicRequest(i++); }, 5000 );
+        }
+        else 
+        {
+            timer = 666;
+            i = save_i;
+        }
+        
+        
+    });
+    
+    
+    $("#stop").click(function() {
+    clearInterval(timer);
+    //save_i = i;
+    timer = null;
+    });
+    
+     var Base64 = {
+
+
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+
+    encode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = Base64._utf8_encode(input);
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+        }
+
+        return output;
+    },
+
+
+    decode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+        while (i < input.length) {
+
+            enc1 = this._keyStr.indexOf(input.charAt(i++));
+            enc2 = this._keyStr.indexOf(input.charAt(i++));
+            enc3 = this._keyStr.indexOf(input.charAt(i++));
+            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+
+            output = output + String.fromCharCode(chr1);
+
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2);
+            }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3);
+            }
+
+        }
+
+        output = Base64._utf8_decode(output);
+
+        return output;
+
+    },
+
+    _utf8_encode: function(string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+
+            var c = string.charCodeAt(n);
+
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        }
+
+        return utftext;
+    },
+
+    _utf8_decode: function(utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+
+        while (i < utftext.length) {
+
+            c = utftext.charCodeAt(i);
+
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if ((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i + 1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i + 1);
+                c3 = utftext.charCodeAt(i + 2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+
+        }
+
+        return string;
+    }
+
+}
+    
+    
+    function randnum(min, max) {
+        
+        min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+        
+    //return Math.random() * (max - min) + min;
+}
+    
+    
+   function sha1 (str) {
+  //  discuss at: https://locutus.io/php/sha1/
+  // original by: Webtoolkit.info (https://www.webtoolkit.info/)
+  // improved by: Michael White (https://getsprink.com)
+  // improved by: Kevin van Zonneveld (https://kvz.io)
+  //    input by: Brett Zamir (https://brett-zamir.me)
+  //      note 1: Keep in mind that in accordance with PHP, the whole string is buffered and then
+  //      note 1: hashed. If available, we'd recommend using Node's native crypto modules directly
+  //      note 1: in a steaming fashion for faster and more efficient hashing
+  //   example 1: sha1('Kevin van Zonneveld')
+  //   returns 1: '54916d2e62f65b3afa6e192e6a601cdbe5cb5897'
+
+  var hash
+  try {
+    var crypto = require('crypto')
+    var sha1sum = crypto.createHash('sha1')
+    sha1sum.update(str)
+    hash = sha1sum.digest('hex')
+  } catch (e) {
+    hash = undefined
+  }
+
+  if (hash !== undefined) {
+    return hash
+  }
+
+  var _rotLeft = function (n, s) {
+    var t4 = (n << s) | (n >>> (32 - s))
+    return t4
+  }
+
+  var _cvtHex = function (val) {
+    var str = ''
+    var i
+    var v
+
+    for (i = 7; i >= 0; i--) {
+      v = (val >>> (i * 4)) & 0x0f
+      str += v.toString(16)
+    }
+    return str
+  }
+
+  var blockstart
+  var i, j
+  var W = new Array(80)
+  var H0 = 0x67452301
+  var H1 = 0xEFCDAB89
+  var H2 = 0x98BADCFE
+  var H3 = 0x10325476
+  var H4 = 0xC3D2E1F0
+  var A, B, C, D, E
+  var temp
+
+  // utf8_encode
+  str = unescape(encodeURIComponent(str))
+  var strLen = str.length
+
+  var wordArray = []
+  for (i = 0; i < strLen - 3; i += 4) {
+    j = str.charCodeAt(i) << 24 |
+      str.charCodeAt(i + 1) << 16 |
+      str.charCodeAt(i + 2) << 8 |
+      str.charCodeAt(i + 3)
+    wordArray.push(j)
+  }
+
+  switch (strLen % 4) {
+    case 0:
+      i = 0x080000000
+      break
+    case 1:
+      i = str.charCodeAt(strLen - 1) << 24 | 0x0800000
+      break
+    case 2:
+      i = str.charCodeAt(strLen - 2) << 24 | str.charCodeAt(strLen - 1) << 16 | 0x08000
+      break
+    case 3:
+      i = str.charCodeAt(strLen - 3) << 24 |
+        str.charCodeAt(strLen - 2) << 16 |
+        str.charCodeAt(strLen - 1) <<
+      8 | 0x80
+      break
+  }
+
+  wordArray.push(i)
+
+  while ((wordArray.length % 16) !== 14) {
+    wordArray.push(0)
+  }
+
+  wordArray.push(strLen >>> 29)
+  wordArray.push((strLen << 3) & 0x0ffffffff)
+
+  for (blockstart = 0; blockstart < wordArray.length; blockstart += 16) {
+    for (i = 0; i < 16; i++) {
+      W[i] = wordArray[blockstart + i]
+    }
+    for (i = 16; i <= 79; i++) {
+      W[i] = _rotLeft(W[i - 3] ^ W[i - 8] ^ W[i - 14] ^ W[i - 16], 1)
+    }
+
+    A = H0
+    B = H1
+    C = H2
+    D = H3
+    E = H4
+
+    for (i = 0; i <= 19; i++) {
+      temp = (_rotLeft(A, 5) + ((B & C) | (~B & D)) + E + W[i] + 0x5A827999) & 0x0ffffffff
+      E = D
+      D = C
+      C = _rotLeft(B, 30)
+      B = A
+      A = temp
+    }
+
+    for (i = 20; i <= 39; i++) {
+      temp = (_rotLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0x6ED9EBA1) & 0x0ffffffff
+      E = D
+      D = C
+      C = _rotLeft(B, 30)
+      B = A
+      A = temp
+    }
+
+    for (i = 40; i <= 59; i++) {
+      temp = (_rotLeft(A, 5) + ((B & C) | (B & D) | (C & D)) + E + W[i] + 0x8F1BBCDC) & 0x0ffffffff
+      E = D
+      D = C
+      C = _rotLeft(B, 30)
+      B = A
+      A = temp
+    }
+
+    for (i = 60; i <= 79; i++) {
+      temp = (_rotLeft(A, 5) + (B ^ C ^ D) + E + W[i] + 0xCA62C1D6) & 0x0ffffffff
+      E = D
+      D = C
+      C = _rotLeft(B, 30)
+      B = A
+      A = temp
+    }
+
+    H0 = (H0 + A) & 0x0ffffffff
+    H1 = (H1 + B) & 0x0ffffffff
+    H2 = (H2 + C) & 0x0ffffffff
+    H3 = (H3 + D) & 0x0ffffffff
+    H4 = (H4 + E) & 0x0ffffffff
+  }
+
+  temp = _cvtHex(H0) + _cvtHex(H1) + _cvtHex(H2) + _cvtHex(H3) + _cvtHex(H4)
+  return temp.toLowerCase()
+}
+  
+  
+  var Base64 = {
+
+
+    _keyStr: "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=",
+
+
+    encode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3, enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = Base64._utf8_encode(input);
+
+        while (i < input.length) {
+
+            chr1 = input.charCodeAt(i++);
+            chr2 = input.charCodeAt(i++);
+            chr3 = input.charCodeAt(i++);
+
+            enc1 = chr1 >> 2;
+            enc2 = ((chr1 & 3) << 4) | (chr2 >> 4);
+            enc3 = ((chr2 & 15) << 2) | (chr3 >> 6);
+            enc4 = chr3 & 63;
+
+            if (isNaN(chr2)) {
+                enc3 = enc4 = 64;
+            } else if (isNaN(chr3)) {
+                enc4 = 64;
+            }
+
+            output = output + this._keyStr.charAt(enc1) + this._keyStr.charAt(enc2) + this._keyStr.charAt(enc3) + this._keyStr.charAt(enc4);
+
+        }
+
+        return output;
+    },
+
+
+    decode: function(input) {
+        var output = "";
+        var chr1, chr2, chr3;
+        var enc1, enc2, enc3, enc4;
+        var i = 0;
+
+        input = input.replace(/[^A-Za-z0-9\+\/\=]/g, "");
+
+        while (i < input.length) {
+
+            enc1 = this._keyStr.indexOf(input.charAt(i++));
+            enc2 = this._keyStr.indexOf(input.charAt(i++));
+            enc3 = this._keyStr.indexOf(input.charAt(i++));
+            enc4 = this._keyStr.indexOf(input.charAt(i++));
+
+            chr1 = (enc1 << 2) | (enc2 >> 4);
+            chr2 = ((enc2 & 15) << 4) | (enc3 >> 2);
+            chr3 = ((enc3 & 3) << 6) | enc4;
+
+            output = output + String.fromCharCode(chr1);
+
+            if (enc3 != 64) {
+                output = output + String.fromCharCode(chr2);
+            }
+            if (enc4 != 64) {
+                output = output + String.fromCharCode(chr3);
+            }
+
+        }
+
+        output = Base64._utf8_decode(output);
+
+        return output;
+
+    },
+
+    _utf8_encode: function(string) {
+        string = string.replace(/\r\n/g, "\n");
+        var utftext = "";
+
+        for (var n = 0; n < string.length; n++) {
+
+            var c = string.charCodeAt(n);
+
+            if (c < 128) {
+                utftext += String.fromCharCode(c);
+            }
+            else if ((c > 127) && (c < 2048)) {
+                utftext += String.fromCharCode((c >> 6) | 192);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+            else {
+                utftext += String.fromCharCode((c >> 12) | 224);
+                utftext += String.fromCharCode(((c >> 6) & 63) | 128);
+                utftext += String.fromCharCode((c & 63) | 128);
+            }
+
+        }
+
+        return utftext;
+    },
+
+    _utf8_decode: function(utftext) {
+        var string = "";
+        var i = 0;
+        var c = c1 = c2 = 0;
+
+        while (i < utftext.length) {
+
+            c = utftext.charCodeAt(i);
+
+            if (c < 128) {
+                string += String.fromCharCode(c);
+                i++;
+            }
+            else if ((c > 191) && (c < 224)) {
+                c2 = utftext.charCodeAt(i + 1);
+                string += String.fromCharCode(((c & 31) << 6) | (c2 & 63));
+                i += 2;
+            }
+            else {
+                c2 = utftext.charCodeAt(i + 1);
+                c3 = utftext.charCodeAt(i + 2);
+                string += String.fromCharCode(((c & 15) << 12) | ((c2 & 63) << 6) | (c3 & 63));
+                i += 3;
+            }
+
+        }
+
+        return string;
+    }
+
+}
+
+</script>
+
+
+
+
