@@ -19,15 +19,15 @@ Just copy the codes and run the index.html file to see the visualization.
 See a demo of the visualization at the link below.
 
 Demo of a Road Traffic System with a car, one signal system and a road side unit
-```
+
 https://basic-blockchain-concept-visualization-for-iov.pages.dev/visualization-1
 
-``
+
 Demo Metro Station Check-in and Check-out
-```
+
 https://basic-blockchain-concept-visualization-for-iov.pages.dev/visualization-2
 
-```
+
 
 ## Contributing
 Pull requests are welcome.
